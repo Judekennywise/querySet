@@ -1,19 +1,15 @@
 import datetime
 from django.utils import timezone
-
 from django.shortcuts import render
-
-# Create your views here.
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.views import APIView
-
 from links import models, serializers
 from links.models import Link
 from links.serializers import LinkSerializer
 
-
+# Create your views here.
 class PostListApi(ListAPIView):
     queryset = Link.objects.filter(active=True)
 
